@@ -1,1 +1,3 @@
+# Date: 9/23/2025, Time: 12:05PM
 
+THIS IS MY FIRST SESSION! I plan on using Python as my chosen programming langauge, because that is the only language I have use frequently in the past few months, other than SQLite. I will work on the Encryption Program first, before worrying about the other two programs. It doesn't seem too bad, after all this is my first time dealing with encryption. But, I hope I'll do my best! Hopefully, I get this encryption program completed by the end of today. If not, by tomorrow. 
