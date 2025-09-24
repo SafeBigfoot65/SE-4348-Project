@@ -1,8 +1,12 @@
-# Date: 9/23/2025, Time: 12:05PM
+# Date: 9/23/2025, Time: 12:05 PM
 
 THIS IS MY FIRST SESSION! I plan on using Python as my chosen programming langauge, because that is the only language I have used frequently in the past few months, other than SQLite. I will work on the Encryption Program first, before worrying about the other two programs. It doesn't seem too bad, after all this is my first time dealing with encryption. But, I hope I'll do my best! Hopefully, I get this encryption program completed by the end of today. If not, by tomorrow. 
 
 
-# Date: 9/23/2025, Time: 9:52PM
+# Date: 9/23/2025, Time: 9:52 PM
 The encryption program is pretty much done. I may add some minor tweaks later on, but as for now, it's good. The only difficult thing was implementing the logic for the encryption and decryption. I had to watch 
 a couple of Youtube videos to get the gist of it. The next program I will work on is the "logger". I felt using a class in the program fits the theme of encryption if we want the passkey to be hidden! Plus, I honestly felt more organized using a class. I'll work on it later this week, if I have time of course. 
+
+# Date: 9/23/2025, Time: 10:29 PM
+
+The logger program is basically completed. Honestly, this was the easiest part of this whole project. Just like the encryption program, I will probably have to perform some minor changes to the logger program, so that it can work with the driver's program. For instance, instead of I need to change connect the standard I/O with pipes in mind. But as of now, it can work by itself! I took CS 4377 (Linux) back in the spring semester of 2025. I was never good with pipes, especially in C (the most painful programming language I had to learn in college). I haven't use pipes in Python as well. So before I even begin implementing my driver's program. I will watch some Youtube videos to freshen up my mind! 
