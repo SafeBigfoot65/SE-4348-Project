@@ -10,3 +10,8 @@ a couple of Youtube videos to get the gist of it. The next program I will work o
 # Date: 9/23/2025, Time: 10:29 PM
 
 The logger program is basically completed. Honestly, this was the easiest part of this whole project. Just like the encryption program, I will probably have to perform some minor changes to the logger program, so that it can work with the driver's program. For instance, instead of I need to change connect the standard I/O with pipes in mind. But as of now, it can work by itself! I took CS 4377 (Linux) back in the spring semester of 2025. I was never good with pipes, especially in C (the most painful programming language I had to learn in college). I haven't use pipes in Python as well. So before I even begin implementing my driver's program. I will watch some Youtube videos to freshen up my mind! 
+
+
+# Date 9/25/2025, Time: 8: 14 PM   
+
+Game plan today is to finally work on the driver's program. I believe this is last thing I will have to work on, other than making some minor changes to the other 2 programs. I've watched some Youtube videos to get an idea of piping with Python's subprocess module, and I feel pretty comfortable with it! Firstly, I will work on the user interface (won't take me a long time to implement), and then worry about piping. I plan on finishing this either by tomorrow or the day after that. 
