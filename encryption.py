@@ -1,3 +1,6 @@
+import sys
+
+
 class Encryption:
     def __init__(self):
         self.passkey = None
@@ -63,10 +66,10 @@ class Encryption:
 
     def handle_result(self, command, error_found = False, result = ''):
         if error_found:
-            return ("ERROR Passkey not set.")
+            return "ERROR Passkey not set"
         else:
             if command in ['ENCRYPT', 'DECRYPT']:
-                return (f"RESULT {result}")
+                return f"RESULT {result}"
             if command == 'PASS':
                 return "RESULT"
 
@@ -76,71 +79,56 @@ class Encryption:
 
 
 def main():
-
     encryption = Encryption()
 
 
-    while True:
-        user_input = input('Enter command: ')
-        user_input = user_input.strip().upper()
-        user_input = user_input.split(" ", 1)
-
-
-        if user_input == ['QUIT']:
-            print("Exiting program.")
+    for driver_input in sys.stdin:
+        
+        line = driver_input.rstrip('\n')
+        if line is None:
             break
-
-
-        if len(user_input) != 2:
-            print('Invalid command format, please try again.')
+        line = line.strip()
+        if line == '':
             continue
 
-        command, argument = user_input
-
-        if command in ['PASS', 'ENCRYPT', 'DECRYPT']:
-
-
-            match command:
-                case 'PASS':
-                    encryption.set_passkey(argument)
-                    print(encryption.handle_result('PASS', False if encryption.get_passkey() else True))
-                    continue
-
-                case 'ENCRYPT':
-                    new_result = None
-
-                    if encryption.get_passkey() is None:
-                        new_result = encryption.handle_result('PASS', True)
-                        print(new_result)
-                        continue
-
-                    result = encryption.encrypt(argument)
-                    if result:
-                        new_result = encryption.handle_result('ENCRYPT', False, result)
-                        print(new_result)
-                    continue
-
-                case 'DECRYPT':
-                    new_result = None
-
-                    if encryption.get_passkey() is None:
-                        new_result = encryption.handle_result('DECRYPT', True)
-                        print(new_result)
-                        continue
-
-                    result = encryption.decrypt(argument)
-                    if result:
-                        new_result = encryption.handle_result('DECRYPT', False, result)
-                        print(new_result)
-                    continue
-
-        else:
-            print('Invalid command, please try again.')
         
+        parts = line.split(' ', 1)
+        command = parts[0].upper()
+        argument = parts[1] if len(parts) > 1 else ''
 
+        if command == 'QUIT':
+            break
 
-    
+        if command not in ['PASS', 'ENCRYPT', 'DECRYPT']:
+            print('ERROR Invalid command', flush=True)
+            continue
 
+        if command == 'PASS':
+            encryption.set_passkey(argument)
+            print(encryption.handle_result('PASS', False if encryption.get_passkey() else True), flush=True)
+            continue
+
+        if command == 'ENCRYPT':
+            if encryption.get_passkey() is None:
+                print(encryption.handle_result('ENCRYPT', True), flush=True)
+                continue
+            result = encryption.encrypt(argument)
+            if result is None:
+                print(encryption.handle_result('ENCRYPT', True), flush=True)
+            else:
+                print(encryption.handle_result('ENCRYPT', False, result), flush=True)
+            continue
+
+        if command == 'DECRYPT':
+            if encryption.get_passkey() is None:
+                print(encryption.handle_result('DECRYPT', True), flush=True)
+                continue
+            result = encryption.decrypt(argument)
+            if result is None:
+                print(encryption.handle_result('DECRYPT', True), flush=True)
+            else:
+                print(encryption.handle_result('DECRYPT', False, result), flush=True)
+            continue
 
 
 if __name__ == "__main__":

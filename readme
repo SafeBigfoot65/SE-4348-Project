@@ -1,0 +1,18 @@
+# Files:
+1. encryption.py
+    Basically, it performs several actions based on the commands provided, and arguments as well (if needed)
+    For instance, the user could type in "PASS" to initiate setting up a new, valid passkey. This file is the most important out of all
+2. logger.py
+    As the name applies, it appends new messages to a provided txt file (based on the command-line argument). Within the messages, they contain the current
+    date, time, command, and result of the command.
+3. driver.py
+    This file pretty much connects the two files above together via creating new processes. It contains a user interface, making it more accessible to end-users. 
+    It also takes in a command line argument, which will be used to log messages to that particular file. 
+
+
+# Instructions on running the program:
+    It's pretty simple, all you need to do is enter the following text in the terminal:
+        python driver.py <filename>
+
+    It will require at least one command-line argument to get started. I'll provide my own "file.txt", so feel free to edit it via this program. 
+    Everything else will pretty much be explained as you go through the UI. Have fun!
